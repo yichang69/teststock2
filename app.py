@@ -157,9 +157,16 @@ def callback_yangbot8():
         elif(text.startswith('?')):
             text = text[1:]
             content = ''
-            sinfo = twstock.codes[text]
             
-            content += sinfo.name
+            for c in twstock.codes:
+                if(text==c.name):
+                    content += '代碼： '
+                    content += c.code
+                    content += '\n'
+            
+            #sinfo = twstock.codes[text]
+            #content += sinfo.name
+            
             line_bot_api_8.reply_message(
                 event.reply_token,
                 TextSendMessage(text=content)
