@@ -158,15 +158,18 @@ def callback_yangbot8():
             text = text[1:]
             content = ''
             
-            for sc in twstock.codes:
-                content += sc[2]
-                content += ', '
-                break
+            for key in twstock.codes:
+                sinfo = twstock.codes[key]
+                if(text==sinfo.name):
+                    content += '代碼： '
+                    content += sinfo.code
+                    break
+                
                 #if(text==sc[2]):
                 #    content += '代碼： '
                 #    content += sc[1]
                 #    content += '\n'
-            
+
             #sinfo = twstock.codes[text]
             #content += sinfo.name
             
