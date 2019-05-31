@@ -159,7 +159,7 @@ def callback_yangbot8():
             content = ''
             
             for c in twstock.codes:
-                if(text==c.name):
+                if(text==c['name']):
                     content += '代碼： '
                     content += c['code']
                     content += '\n'
