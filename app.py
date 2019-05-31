@@ -156,12 +156,12 @@ def callback_yangbot8():
 
         elif(text.startswith('?')):
             text = text[1:]
-            content = ''
+            content = 'not found'
             
             for key in twstock.codes:
                 sinfo = twstock.codes[key]
                 if(text==sinfo.name):
-                    content += '代碼： '
+                    content  = '代碼： '
                     content += sinfo.code
                     break
                 
