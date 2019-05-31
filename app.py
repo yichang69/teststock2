@@ -157,7 +157,7 @@ def callback_yangbot8():
         elif(text.startswith('?')):
             text = text[1:]
             content = ''
-            sinfo = twstock.codes.codes[text]
+            sinfo = twstock.codes[text]
             
             content += sinfo.name
             line_bot_api_8.reply_message(
