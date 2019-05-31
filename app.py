@@ -8,12 +8,6 @@ from pymongo import MongoClient
 #ref: http://twstock.readthedocs.io/zh_TW/latest/quickstart.html#id2
 import twstock
 
-stock = Stock('2330')
-bfp = BestFourPoint(stock)
-
-bfp.best_four_point_to_buy()    # 判斷是否為四大買點
-bfp.best_four_point_to_sell()   # 判斷是否為四大賣點
-bfp.best_four_point()           # 綜合判斷
 import matplotlib
 matplotlib.use('Agg') # ref: https://matplotlib.org/faq/howto_faq.html
 import matplotlib.pyplot as plt
