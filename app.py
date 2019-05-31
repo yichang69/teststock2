@@ -161,6 +161,7 @@ def callback_yangbot8():
             for sc in twstock.codes:
                 content += sc[2]
                 content += ', '
+                break
                 #if(text==sc[2]):
                 #    content += '代碼： '
                 #    content += sc[1]
