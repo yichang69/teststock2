@@ -154,7 +154,17 @@ def callback_yangbot8():
                 image_message
                 )
 
-
+        elif(text.startswith('?')):
+            text = text[1:]
+            content = ''
+            sinfo = twstock.codes.codes[text]
+            
+            content += sinfo.name
+            line_bot_api_8.reply_message(
+                event.reply_token,
+                TextSendMessage(text=content)
+            )           
+            
     return 'OK'
 
 
