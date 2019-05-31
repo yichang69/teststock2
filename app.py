@@ -117,10 +117,10 @@ def callback_yangbot8():
                 #content += '[%s] %s\n' %(date5[i].strftime("%Y-%m-%d %H:%M:%S"), price5[i])
                 content += '[%s] %s\n' %(date5[i].strftime("%Y-%m-%d"), price5[i])
                 
-            bfp = twstock.BestFourPoint(stock)
+            #bfp = twstock.BestFourPoint(stock)
             #bfp.best_four_point_to_buy()    # 判斷是否為四大買點
             #bfp.best_four_point_to_sell()   # 判斷是否為四大賣點
-            content += bfp.best_four_point()           # 綜合判斷
+            #content += bfp.best_four_point()           # 綜合判斷
 
             line_bot_api_8.reply_message(
                 event.reply_token,
