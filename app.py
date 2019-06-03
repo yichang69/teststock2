@@ -63,6 +63,24 @@ def callback_yangbot8():
                 event.reply_token,
                 TextSendMessage(text=content)
             )
+        elif(text.lower() == 'mystock'):
+            profile = line_bot_api_8.get_profile(event.source.user_id)
+            my_status_message = profile.status_message
+            if not my_status_message:
+                my_status_message = '-'
+            line_bot_api_8.reply_message(
+                event.reply_token, [
+                    TextSendMessage(
+                        text='元大台灣50: ' + 'line://oaMessage/@220ejbrr/?#0050'
+                    ),
+                    TextSendMessage(
+                        text='鉅祥: ' + 'line://oaMessage/@220ejbrr/?#2476'
+                    ),
+                    TextSendMessage(
+                        text='創惟: ' + 'line://oaMessage/@220ejbrr/?#6104'
+                    ),
+                ]
+            )
         elif(text.lower() == 'profile'):
             profile = line_bot_api_8.get_profile(event.source.user_id)
             my_status_message = profile.status_message
