@@ -37,6 +37,7 @@ line_uid = ''
 
 @app.route("/callback_yangbot8", methods=['POST'])
 def callback_yangbot8():
+    global line_uid
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
