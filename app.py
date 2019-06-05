@@ -209,6 +209,7 @@ def basic_url():
 
 @app.route("/push", methods=['GET'])
 def push():
+    global line_uid
     line_bot_api_8.push_message(line_uid, TextSendMessage(text="hello, world"))
     return 'OK'
     
