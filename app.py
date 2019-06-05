@@ -32,6 +32,8 @@ channel_access_token_8 = 'EkhtS4e2iaJeWO0z3U0XWJKSdYhBX8vA5qudTCqd0JdbWjQxuNvBIF
 line_bot_api_8 = LineBotApi(channel_access_token_8)
 parser_8 = WebhookParser(channel_secret_8)
 line_push_url = 'https://api.line.me/v2/bot/message/push'
+line_uid = ''
+
 
 @app.route("/callback_yangbot8", methods=['POST'])
 def callback_yangbot8():
@@ -56,7 +58,8 @@ def callback_yangbot8():
 
         text=event.message.text
         #userId = event['source']['userId']
-        userId = 'U8b3aec5a3147090923fb0cd0a7688143'
+        line_uid = event.source.user_id
+        
         if(text.lower()=='me'):
             content = str(event.source.user_id)
 
@@ -206,7 +209,7 @@ def basic_url():
 
 @app.route("/push", methods=['GET'])
 def push():
-    line_bot_api_8.push_message('U8b3aec5a3147090923fb0cd0a7688143', TextSendMessage(text="hello, world"))
+    line_bot_api_8.push_message(line_uid, TextSendMessage(text="hello, world"))
     return 'OK'
     
 if __name__ == "__main__":
